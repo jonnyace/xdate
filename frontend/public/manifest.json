@@ -1,0 +1,45 @@
+{
+  "short_name": "X Dating",
+  "name": "X Dating - Authentic Social Dating",
+  "description": "Find meaningful connections through authentic social media profiles",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#1d9bf0",
+  "background_color": "#0f1419",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "categories": ["social", "lifestyle"],
+  "shortcuts": [
+    {
+      "name": "Discover",
+      "short_name": "Discover",
+      "description": "Find new matches",
+      "url": "/discover",
+      "icons": [{ "src": "logo192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Messages",
+      "short_name": "Messages",
+      "description": "View conversations",
+      "url": "/messages",
+      "icons": [{ "src": "logo192.png", "sizes": "192x192" }]
+    }
+  ]
+}

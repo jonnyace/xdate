@@ -1,0 +1,63 @@
+{
+  "expo": {
+    "name": "X Dating",
+    "slug": "xdate-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1d9bf0"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.xdate.app",
+      "buildNumber": "1.0.0",
+      "infoPlist": {
+        "NSCameraUsageDescription": "X Dating needs camera access to take profile photos",
+        "NSLocationWhenInUseUsageDescription": "X Dating uses your location to find matches nearby",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "X Dating uses your location to find matches nearby"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#1d9bf0"
+      },
+      "package": "com.xdate.app",
+      "versionCode": 1,
+      "permissions": [
+        "CAMERA",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "NOTIFICATIONS"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-camera",
+      "expo-location",
+      "expo-notifications",
+      [
+        "expo-auth-session",
+        {
+          "schemes": ["xdate"]
+        }
+      ]
+    ],
+    "scheme": "xdate",
+    "extra": {
+      "eas": {
+        "projectId": "your-project-id"
+      }
+    }
+  }
+}
