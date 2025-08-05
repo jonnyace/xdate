@@ -1,0 +1,79 @@
+{
+  "name": "xdate",
+  "version": "1.0.0",
+  "description": "A modern dating application that leverages X (formerly Twitter) for authentic, real-time social matching",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend",
+    "mobile",
+    "shared"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm start",
+    "dev:mobile": "cd mobile && npm start",
+    "build": "npm run build:backend && npm run build:frontend",
+    "build:backend": "cd backend && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "test": "npm run test:backend && npm run test:frontend",
+    "test:backend": "cd backend && npm test",
+    "test:frontend": "cd frontend && npm test",
+    "lint": "npm run lint:backend && npm run lint:frontend",
+    "lint:backend": "cd backend && npm run lint",
+    "lint:frontend": "cd frontend && npm run lint",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:build": "docker-compose build",
+    "setup": "npm install && npm run docker:up && npm run migrate",
+    "migrate": "cd backend && npm run migrate",
+    "seed": "cd backend && npm run seed"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "prettier": "^3.1.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/xdate.git"
+  },
+  "keywords": [
+    "dating",
+    "social",
+    "x",
+    "twitter",
+    "oauth",
+    "matching",
+    "react",
+    "nodejs",
+    "postgresql"
+  ],
+  "author": "X Dating Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yourusername/xdate/issues"
+  },
+  "homepage": "https://github.com/yourusername/xdate#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  }
+} 
