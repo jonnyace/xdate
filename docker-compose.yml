@@ -77,7 +77,8 @@ services:
       dockerfile: Dockerfile.dev
     container_name: xdate-frontend
     environment:
-      REACT_APP_API_URL: http://localhost:3001
+      REACT_APP_API_URL: http://backend:3001
+      REACT_APP_WS_URL: http://backend:3001
       REACT_APP_X_CLIENT_ID: ${X_CLIENT_ID}
     ports:
       - "3000:3000"
