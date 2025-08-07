@@ -3,7 +3,7 @@ version: '3.8'
 services:
   # Database
   postgres:
-    image: postgres:15-alpine
+    image: postgis/postgis:15-3.4-alpine
     container_name: xdate-postgres
     environment:
       POSTGRES_DB: xdate
@@ -77,9 +77,9 @@ services:
       dockerfile: Dockerfile.dev
     container_name: xdate-frontend
     environment:
-      REACT_APP_API_URL: http://backend:3001
-      REACT_APP_WS_URL: http://backend:3001
-      REACT_APP_X_CLIENT_ID: ${X_CLIENT_ID}
+      VITE_API_URL: http://backend:3001
+      VITE_WS_URL: http://backend:3001
+      VITE_X_CLIENT_ID: ${X_CLIENT_ID}
     ports:
       - "3000:3000"
     volumes:
@@ -89,7 +89,7 @@ services:
       - backend
     networks:
       - xdate-network
-    command: npm start
+    command: npm run dev -- --host --port 3000
 
   # Mobile Development Server (Expo)
   mobile:
