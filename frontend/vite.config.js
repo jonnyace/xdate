@@ -12,6 +12,10 @@ export default defineConfig({
     port: 3000,
     host: true,
   },
+  esbuild: {
+    loader: 'jsx',
+    include: /src\/.*\.(js|jsx)$/,
+  },
 });
 
 
