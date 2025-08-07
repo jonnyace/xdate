@@ -13,8 +13,10 @@ export default defineConfig({
     host: true,
   },
   esbuild: {
-    loader: 'jsx',
-    include: /src\/.*\.(js|jsx)$/,
+    jsx: 'automatic',
+    loader: {
+      '.js': 'jsx',
+    },
   },
 });
 
