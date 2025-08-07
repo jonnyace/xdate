@@ -26,8 +26,13 @@ const app = express();
 const server = createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: process.env.CLIENT_URL || "http://localhost:3000",
-    methods: ["GET", "POST"]
+    origin: [
+      process.env.CLIENT_URL || 'http://localhost:3000',
+      'http://localhost:19006',
+      'http://localhost:3000',
+      'http://frontend:3000'
+    ],
+    methods: ['GET', 'POST']
   }
 });
 
@@ -63,7 +68,7 @@ app.use(cors({
   origin: [
     process.env.CLIENT_URL || 'http://localhost:3000',
     'http://localhost:19006', // Expo dev server
-    'exp://192.168.1.100:19000' // Expo mobile
+    'http://frontend:3000'
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
