@@ -2,7 +2,12 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react({
+      // Ensure JSX in .js files is transformed
+      include: [/\.jsx?$/],
+    }),
+  ],
   server: {
     port: 3000,
     host: true,
@@ -16,6 +21,13 @@ export default defineConfig({
     jsx: 'automatic',
     loader: {
       '.js': 'jsx',
+    },
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      loader: {
+        '.js': 'jsx',
+      },
     },
   },
 });
