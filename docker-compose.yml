@@ -47,7 +47,14 @@ services:
     environment:
       NODE_ENV: development
       DATABASE_URL: postgresql://xdate_user:xdate_password@postgres:5432/xdate
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: xdate
+      DB_USER: xdate_user
+      DB_PASSWORD: xdate_password
       REDIS_URL: redis://redis:6379
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
       PORT: 3001
     ports:
       - "3001:3001"
